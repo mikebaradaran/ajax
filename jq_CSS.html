@@ -1,0 +1,54 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>append demo</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="students.js"></script>
+    <style>
+        li:hover {
+            background: yellow;
+        }
+
+        .rotate {
+            position: absolute;
+            left: 250px;
+            top: 180px;
+            transform: rotate(90deg);
+        }
+    </style>
+
+</head>
+<body>
+    <ul id="students"></ul> <hr />
+    <ol id="registeredStudents"></ol>
+    <button onclick="rotate()">rotate</button>
+
+    <script>
+        $(function () {
+            names.forEach(name => {
+                let x = $(`<li>${name}</li>`);
+                x.appendTo($('#students'));
+            });
+            //setStyleUsingCode();
+        });
+
+        function rotate() {
+            $('#students').toggleClass('rotate');
+        }
+
+        function setStyleUsingCode() {
+            var myStyle = {
+                'font-size': '14pt',
+                position: 'absolute',
+                left: '200px',
+                top: '10px',
+            };
+            myStyle.color = 'Blue';
+            myStyle.transform = 'rotate(20deg)';
+            $('#students').css(myStyle);
+        }
+    </script>
+</body>
+</html>

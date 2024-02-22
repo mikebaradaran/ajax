@@ -1,0 +1,47 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>append demo</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="students.js"></script>
+
+    <style>
+        li:hover {
+            background: yellow;
+        }
+    </style>
+
+</head>
+<body>
+    <ul id="students"></ul>
+    <div>aaa</div>
+    <div>aaaaaa</div>
+    <div>aaaaaaaaaa</div>
+    <script>
+        /*
+          for (var i = 0; i < names.length; i++) {
+            let x = $(`<li>${names[i]}</li>`);
+            x.appendTo($('#students'));
+        }
+        */
+
+        names.forEach(name => {
+            let x = $(`<li>${name}</li>`);
+            x.appendTo($('#students'));
+
+            x.click(function () {
+                alert($(this).html());
+            });
+
+            $('div').click(function () {
+                alert($(this).html());
+            });
+        });
+
+    </script>
+
+
+</body>
+</html>

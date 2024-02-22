@@ -1,0 +1,32 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+    <title>append demo</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="students.js"></script>
+    <style>
+        li:hover {
+            background: yellow;
+        }
+        ol, ul{
+            display:inline-block;
+        }
+    </style>
+</head>
+<body>
+    <ul id="students"></ul>
+    <select id="registeredStudents"></select>
+    <script>
+        names.forEach(name => {
+            let x = $(`<li>${name}</li>`);
+            x.appendTo($('#students'));
+
+            x.click(function () {
+                $(`<option>${x.text()}</option>`).appendTo($('#registeredStudents'));
+                x.remove();
+            });
+        });
+    </script>
+</body>
+</html>
